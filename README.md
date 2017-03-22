@@ -5,8 +5,8 @@
 ![rtclock](assets/rtclock.gif)
 
 ## Features
-- [ ] Use WebSocket to send backend real time clock to frontend.
-- [ ] Support go-bindata.
+- [x] Use WebSocket to send backend real time clock to frontend.
+- [x] Support go-bindata.
 
 ## Install
 * `go get github.com/Akagi201/rtclock`
