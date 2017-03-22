@@ -1,6 +1,8 @@
 # rtclock
 
-An HTML5 Real Time Clock based on WebSocket
+> An HTML5 Real Time Clock based on WebSocket
+
+![rtclock](assets/rtclock.gif)
 
 ## Features
 - [ ] Use WebSocket to send backend real time clock to frontend.
