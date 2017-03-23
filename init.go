@@ -11,6 +11,7 @@ import (
 )
 
 var opts struct {
+	Interval   string `long:"interval" default:"10ms" description:"interval for the clock fresh time, use time.Duration format"`
 	LogLevel   string `long:"log_level" default:"info" description:"log level"`
 	ListenAddr string `long:"listen" default:"0.0.0.0:8327" description:"HTTP address and port to listen at"`
 	Template   string `long:"template" default:"data/template/index.html" description:"the template base file"`

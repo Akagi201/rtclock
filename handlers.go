@@ -19,16 +19,21 @@ func handleHome(w http.ResponseWriter, r *http.Request) {
 		r.Host,
 	}
 	if err := t.Execute(w, &v); err != nil {
-		log.Printf("Template execute failed, err: %v", err)
+		log.Errorf("Template execute failed, err: %v", err)
 		return
 	}
 }
 
 func handleClock(ws *websocket.Conn) {
+	interval, err := time.ParseDuration(opts.Interval)
+	if err != nil {
+		log.Errorf("Parse interval failed, err: %v", err)
+		return
+	}
 	for {
 		now := time.Now()
 		clock := now.Format(time.RFC3339Nano)
 		io.WriteString(ws, clock)
-		time.Sleep(10 * time.Millisecond)
+		time.Sleep(interval)
 	}
 }
